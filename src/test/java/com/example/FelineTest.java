@@ -9,9 +9,10 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 import static org.junit.Assert.*;
+
 @RunWith(MockitoJUnitRunner.class)
 public class FelineTest {
-    String getFamilyExpected ="Кошачьи";
+    String getFamilyExpected = "Кошачьи";
     int getKittensWithoutArgumentsExpected = 1;
     List<String> expectedPredatorFood = List.of("Животные", "Птицы", "Рыба");
 
@@ -19,9 +20,9 @@ public class FelineTest {
     Animal animal;
 
     @Test
-    public void isEatMeatMethodReturnsPredatorFoodTest() throws Exception{
+    public void isEatMeatMethodReturnsPredatorFoodTest() throws Exception {
         Feline feline = new Feline();
-        List<String> actual =feline.eatMeat();
+        List<String> actual = feline.eatMeat();
         List<String> expected = expectedPredatorFood;
         assertEquals("Метод eatMeat() класса Feline не возвращает пищу хищника", expected, actual);
     }
@@ -29,7 +30,7 @@ public class FelineTest {
     @Test
     public void isGetFamilyReturnsFelineTest() {
         Feline feline = new Feline();
-        String actual =feline.getFamily();
+        String actual = feline.getFamily();
         assertEquals("Метод getFamily() класса Feline не возвращает семейство feline", getFamilyExpected, actual);
     }
 
