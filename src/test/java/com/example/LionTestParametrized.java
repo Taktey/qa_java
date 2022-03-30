@@ -27,7 +27,7 @@ import static org.junit.Assert.*;
             Lion lion = new Lion(sex, new Feline());
             boolean expected = hasMane;
             boolean actual = lion.doesHaveMane();
-            assertEquals(expected, actual);
+            assertEquals("Зависимость значения переменной hasMane от переменной sex нарушена", expected, actual);
         }
 
 }

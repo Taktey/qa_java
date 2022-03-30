@@ -25,7 +25,7 @@ import static org.junit.Assert.*;
                 fail("expected Exception for non invalid values of sex variable");
             } catch (Exception ex) {
                 String actual = ex.getMessage();
-                assertEquals(expectedExceptionMessage, actual);
+                assertEquals("Сообщение об ошибке невалидного пола (sex) экземпляра класса Lion не соответствует ожидаемому", expectedExceptionMessage, actual);
             }
         }
         @Test
@@ -34,29 +34,29 @@ import static org.junit.Assert.*;
             Lion lion = new Lion("Самец", feline);
             Mockito.when(feline.getKittens()).thenReturn(4);
             int actual = lion.getKittens();
-            assertEquals(expected, actual);
+            assertEquals("Метод getKittens() класса Lion не вызывает метод getKittens() Feline без аргументов", expected, actual);
         }
         @Test
         public void isGetKittensReturnsOneTest() throws Exception{
             Lion lion = new Lion("Самец", new Feline());
             int actual = lion.getKittens();
             int expected = lionGetKittensExpected;
-            assertEquals(expected, actual);
+            assertEquals("Метод getKittens() класса Lion не возвращает единицу", expected, actual);
         }
 
         @Test
-        public void isGetFoodMethodIsCalingFelineClassGetFoodMethodTest() throws Exception {
+        public void isGetFoodMethodIsCallingFelineClassGetFoodMethodTest() throws Exception {
             List<String> expected = List.of("1", "2", "3");
             Lion lion = new Lion("Самец", feline);
             Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("1", "2", "3"));
             List<String> actual = lion.getFood();
-            assertEquals(expected, actual);
+            assertEquals("Метод getFood() класса Lion не вызывает метод getFood() класса Feline", expected, actual);
         }
         @Test
         public void isGetFoodMethodReturnsPredatorFoodTest() throws Exception {
             List<String> expected = List.of("Животные", "Птицы", "Рыба");
             Lion lion = new Lion("Самец", new Feline());
             List<String> actual = lion.getFood();
-            assertEquals(expected, actual);
+            assertEquals("Метод getFood() класса Lion не возвращает пищу хищника", expected, actual);
         }
     }

@@ -23,14 +23,14 @@ public class FelineTest {
         Feline feline = new Feline();
         List<String> actual =feline.eatMeat();
         List<String> expected = expectedPredatorFood;
-        assertEquals(expected, actual);
+        assertEquals("Метод eatMeat() класса Feline не возвращает пищу хищника", expected, actual);
     }
 
     @Test
     public void isGetFamilyReturnsFelineTest() {
         Feline feline = new Feline();
         String actual =feline.getFamily();
-        assertEquals(getFamilyExpected, actual);
+        assertEquals("Метод getFamily() класса Feline не возвращает семейство feline", getFamilyExpected, actual);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class FelineTest {
         Feline feline = new Feline();
         int actual = feline.getKittens();
         int expected = getKittensWithoutArgumentsExpected;
-        assertEquals(expected, actual);
+        assertEquals("Метод getKittens() без аргумента класса Feline не возвращает 1", expected, actual);
     }
 
 }

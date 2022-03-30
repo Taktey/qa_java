@@ -28,6 +28,6 @@ public class FelineTestParametrized {
         Feline feline = new Feline();
         int actual =feline.getKittens(getKittensArgument);
         int expected = getKittensReturnExpected;
-        assertEquals(expected, actual);
+        assertEquals("Метод getKittens() класса Feline возвращает значение, не соответствующее передаваемому аргументу", expected, actual);
     }
 }
