@@ -16,7 +16,7 @@ public class LionTestParametrized {
         this.hasMane = hasMane;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные:{0},{1}")
     public static Object[][] getData() {
         return new Object[][]{
                 {"Самец", true},
